@@ -1,0 +1,53 @@
+Name,ParentDn,ProtectedFromAccidentalDeletion,Description,Enabled
+Example,"DC=example,DC=corp",true,"Enterprise root OU",true
+Tier0,"OU=Example,DC=example,DC=corp",true,"Tier 0 administration root",true
+Tier1,"OU=Example,DC=example,DC=corp",true,"Tier 1 administration root",true
+Tier2,"OU=Example,DC=example,DC=corp",true,"Tier 2 administration root",true
+Users,"OU=Example,DC=example,DC=corp",true,"Standard user accounts root",true
+Workstations,"OU=Example,DC=example,DC=corp",true,"Managed workstation root",true
+Servers,"OU=Example,DC=example,DC=corp",true,"Managed server root",true
+Groups,"OU=Example,DC=example,DC=corp",true,"Managed group root",true
+ServiceAccounts,"OU=Example,DC=example,DC=corp",true,"Service account root",true
+Admins,"OU=Example,DC=example,DC=corp",true,"Administrative identity root",true
+Sites,"OU=Example,DC=example,DC=corp",true,"Site-aligned object root",true
+Staging,"OU=Example,DC=example,DC=corp",true,"Staging objects",true
+Quarantine,"OU=Example,DC=example,DC=corp",true,"Quarantine objects",true
+Corporate,"OU=Users,OU=Example,DC=example,DC=corp",true,"Corporate user accounts",true
+Regional,"OU=Users,OU=Example,DC=example,DC=corp",true,"Regional user accounts",true
+Contractors,"OU=Users,OU=Example,DC=example,DC=corp",true,"Contractor user accounts",true
+PrivilegedExcluded,"OU=Users,OU=Example,DC=example,DC=corp",true,"Users excluded from standard user baselines",true
+Disabled,"OU=Users,OU=Example,DC=example,DC=corp",true,"Disabled user accounts",true
+AMER,"OU=Workstations,OU=Example,DC=example,DC=corp",true,"AMER workstation branch",true
+EMEA,"OU=Workstations,OU=Example,DC=example,DC=corp",true,"EMEA workstation branch",true
+APAC,"OU=Workstations,OU=Example,DC=example,DC=corp",true,"APAC workstation branch",true
+Kiosks,"OU=Workstations,OU=Example,DC=example,DC=corp",true,"Kiosk workstation branch",true
+VDI,"OU=Workstations,OU=Example,DC=example,DC=corp",true,"Virtual desktop branch",true
+Quarantine,"OU=Workstations,OU=Example,DC=example,DC=corp",true,"Quarantined workstations",true
+Infrastructure,"OU=Servers,OU=Example,DC=example,DC=corp",true,"Infrastructure servers",true
+Applications,"OU=Servers,OU=Example,DC=example,DC=corp",true,"Application servers",true
+Regional,"OU=Servers,OU=Example,DC=example,DC=corp",true,"Regional servers",true
+JumpHosts,"OU=Servers,OU=Example,DC=example,DC=corp",true,"Jump hosts",true
+RoleBased,"OU=Groups,OU=Example,DC=example,DC=corp",true,"Role-based groups",true
+ResourceBased,"OU=Groups,OU=Example,DC=example,DC=corp",true,"Resource-based groups",true
+MailEnabled,"OU=Groups,OU=Example,DC=example,DC=corp",true,"Mail-enabled groups",true
+Delegation,"OU=Groups,OU=Example,DC=example,DC=corp",true,"Delegation groups",true
+Tier0,"OU=ServiceAccounts,OU=Example,DC=example,DC=corp",true,"Tier 0 service accounts",true
+Tier1,"OU=ServiceAccounts,OU=Example,DC=example,DC=corp",true,"Tier 1 service accounts",true
+Tier2,"OU=ServiceAccounts,OU=Example,DC=example,DC=corp",true,"Tier 2 service accounts",true
+Applications,"OU=ServiceAccounts,OU=Example,DC=example,DC=corp",true,"Application service accounts",true
+Tier0,"OU=Admins,OU=Example,DC=example,DC=corp",true,"Tier 0 admins",true
+Tier1,"OU=Admins,OU=Example,DC=example,DC=corp",true,"Tier 1 admins",true
+Tier2,"OU=Admins,OU=Example,DC=example,DC=corp",true,"Tier 2 admins",true
+EmergencyAccess,"OU=Admins,OU=Example,DC=example,DC=corp",true,"Emergency access admins",true
+AMER,"OU=Sites,OU=Example,DC=example,DC=corp",true,"AMER site branch",true
+EMEA,"OU=Sites,OU=Example,DC=example,DC=corp",true,"EMEA site branch",true
+APAC,"OU=Sites,OU=Example,DC=example,DC=corp",true,"APAC site branch",true
+AdminGroups,"OU=Tier0,OU=Example,DC=example,DC=corp",true,"Tier 0 admin groups",true
+Delegation,"OU=Tier0,OU=Example,DC=example,DC=corp",true,"Tier 0 delegation",true
+PrivilegedRoles,"OU=Tier0,OU=Example,DC=example,DC=corp",true,"Tier 0 privileged roles",true
+AdminGroups,"OU=Tier1,OU=Example,DC=example,DC=corp",true,"Tier 1 admin groups",true
+Delegation,"OU=Tier1,OU=Example,DC=example,DC=corp",true,"Tier 1 delegation",true
+PrivilegedRoles,"OU=Tier1,OU=Example,DC=example,DC=corp",true,"Tier 1 privileged roles",true
+AdminGroups,"OU=Tier2,OU=Example,DC=example,DC=corp",true,"Tier 2 admin groups",true
+Delegation,"OU=Tier2,OU=Example,DC=example,DC=corp",true,"Tier 2 delegation",true
+PrivilegedRoles,"OU=Tier2,OU=Example,DC=example,DC=corp",true,"Tier 2 privileged roles",true
