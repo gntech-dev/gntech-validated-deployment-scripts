@@ -16,17 +16,18 @@ Only workflows that have completed a real lab deployment are admitted here. Work
 
 ## Included workflows
 
-| Workflow | Script |
-| --- | --- |
-| Initial Windows Server hostname, static IPv4, DNS, and AD DS/DNS/DHCP features | `scripts/Initialize-WindowsServerNetwork.ps1` |
-| New Active Directory forest promotion | `scripts/Promote-ADForest.ps1` |
-| DNS, DHCP, reverse zones, and OU post-promotion baseline | `scripts/Configure-ADPostPromotion.ps1` |
-| Active Directory Sites and Services subnets | `scripts/Configure-ADSites.ps1` |
-| Computer baseline GPOs | `scripts/Configure-ComputerBaselineGpo.ps1` |
-| User baseline GPO | `scripts/Configure-UserBaselineGpo.ps1` |
-| File-server hostname/network/domain onboarding | `scripts/Deploy-FileServerStage1.ps1` |
-| File-service access groups and SMB shares | `scripts/Create-FileServiceGroups.ps1`, `scripts/Configure-FileShares.ps1` |
-| Domain workstation validation and join | `scripts/Join-DomainWorkstation.ps1` |
+| Order | Workflow | Script |
+| --- | --- | --- |
+| 01 | Initial Windows Server hostname, static IPv4, DNS, and AD DS/DNS/DHCP features | `scripts/01-Initialize-WindowsServerNetwork.ps1` |
+| 02 | New Active Directory forest promotion | `scripts/02-Promote-ADForest.ps1` |
+| 03 | DNS, DHCP, reverse zones, and full OU post-promotion baseline | `scripts/03-Configure-ADPostPromotion.ps1` |
+| 04 | Active Directory Sites and Services subnets | `scripts/04-Configure-ADSites.ps1` |
+| 05 | Computer baseline GPOs | `scripts/05-Configure-ComputerBaselineGpo.ps1` |
+| 06 | User baseline GPO | `scripts/06-Configure-UserBaselineGpo.ps1` |
+| 07 | File-server hostname/network/domain onboarding | `scripts/07-Deploy-FileServerStage1.ps1` |
+| 08 | File-service access groups | `scripts/08-Create-FileServiceGroups.ps1` |
+| 09 | SMB shares and NTFS permissions | `scripts/09-Configure-FileShares.ps1` |
+| 10 | Domain workstation validation and join | `scripts/10-Join-DomainWorkstation.ps1` |
 
 ## Safe usage pattern
 
@@ -40,14 +41,14 @@ Example forest promotion:
 
 ```powershell
 Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process -Force
-.\Promote-ADForest.ps1 -DomainName 'corp.example' -NetBIOSName 'EXAMPLE'
+.\02-Promote-ADForest.ps1 -DomainName 'corp.example' -NetBIOSName 'EXAMPLE'
 ```
 
 The script securely requests both the local Administrator password and the DSRM password.
 
 ## OU template
 
-`templates/ou-baseline.csv` is an editable OU hierarchy sample for `Configure-ADPostPromotion.ps1`.
+`templates/ou-baseline.csv` contains the complete 52-OU hierarchy validated in the source lab: enterprise root; Tier0/1/2; Users; Workstations; Servers; Groups; ServiceAccounts; Admins; Sites; Staging; Quarantine; and their functional children. `03-Configure-ADPostPromotion.ps1` automatically uses this repository template when it runs from the `scripts` directory. Pass `-OuTemplateCsvPath` only when using your own approved CSV.
 
 ## Validation provenance
 

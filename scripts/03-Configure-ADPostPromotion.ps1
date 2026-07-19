@@ -135,8 +135,12 @@ function Resolve-Inputs {
             (Get-Location).Path
         }
 
-        $defaultCsv = Join-Path -Path $scriptDirectory -ChildPath 'ou-baseline.csv'
-        if (Test-Path -LiteralPath $defaultCsv) { $defaultCsv } else { '' }
+        $localCsv = Join-Path -Path $scriptDirectory -ChildPath 'ou-baseline.csv'
+        $repositoryCsv = Join-Path -Path (Split-Path -Path $scriptDirectory -Parent) -ChildPath 'templates\ou-baseline.csv'
+
+        if (Test-Path -LiteralPath $localCsv) { $localCsv }
+        elseif (Test-Path -LiteralPath $repositoryCsv) { $repositoryCsv }
+        else { '' }
     } else { $OuTemplateCsvPath.Trim() }
 }
 
